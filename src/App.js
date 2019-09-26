@@ -82,23 +82,27 @@ class App extends Component {
     console.log('App render');
     return (
       <div className="App">
-       <Subject 
-        title={this.state.subject.title} 
-        sub={this.state.subject.sub}
-        onChangePage={function(){
-          this.setState({mode:'welcome'});
-        }.bind(this)}
-        >
-       </Subject>
-       <Nav 
-        onChangePage={function(id){
-        this.setState({
-          mode:'read',
-          selected_content_id:Number(id)
-        });
-       }.bind(this)}
-       data={this.state.contents}
-       ></Nav>
+        <div className="main">
+          <Subject
+            title={this.state.subject.title} 
+            sub={this.state.subject.sub}
+            onChangePage={function(){
+              this.setState({mode:'welcome'});
+            }.bind(this)}
+            >
+          </Subject>
+        </div>
+        <div className="box"> 
+          <Nav 
+            onChangePage={function(id){
+            this.setState({
+              mode:'read',
+              selected_content_id:Number(id)
+            });
+          }.bind(this)}
+          data={this.state.contents}
+          ></Nav>
+        </div>
        <Control onChangeMode={function(_mode){
          if(_mode === 'delete'){
           if(window.confirm('really?')){
@@ -123,7 +127,9 @@ class App extends Component {
          })
         }
        }.bind(this)}></Control>
-       {this.getContent()}
+       <div className="desc">
+        {this.getContent()}
+       </div>
       </div>
     );
   }  
