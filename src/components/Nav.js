@@ -20,6 +20,7 @@ class Nav extends Component {
         lists.push(
         <li key={data[i].id}>
           <a 
+            class="menuLink"
             href={"/contents/"+data[i].id}
             data-id={data[i].id}
             onClick={function(e){

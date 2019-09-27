@@ -92,7 +92,7 @@ class App extends Component {
             >
           </Subject>
         </div>
-        <div className="box"> 
+        <div className="menu"> 
           <Nav 
             onChangePage={function(id){
             this.setState({
@@ -102,7 +102,6 @@ class App extends Component {
           }.bind(this)}
           data={this.state.contents}
           ></Nav>
-        </div>
        <Control onChangeMode={function(_mode){
          if(_mode === 'delete'){
           if(window.confirm('really?')){
@@ -127,6 +126,7 @@ class App extends Component {
          })
         }
        }.bind(this)}></Control>
+       </div>
        <div className="desc">
         {this.getContent()}
        </div>

@@ -5,11 +5,11 @@ class Control extends Component {
       console.log('Subject render')
       return(
         <ul>
-         <li><a href="/create" onClick={function(e){
+         <li><a href="/create" class="menuLink" onClick={function(e){
            e.preventDefault();
            this.props.onChangeMode('create');
          }.bind(this)}>create</a></li>
-         <li><a href="/update"onClick={function(e){
+         <li><a href="/update" class="menuLink" onClick={function(e){
            e.preventDefault();
            this.props.onChangeMode('update');
          }.bind(this)}>update</a></li>
